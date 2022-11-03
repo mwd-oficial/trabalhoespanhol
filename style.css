@@ -85,46 +85,49 @@ main {
     box-shadow: 0px -20px 20px 0px rgba(0, 0, 0, 0.5);
 }
 
-#temas {
-    display: inline;
-}
-
-.temasdiv {
+.tittemas {
     margin: auto;
-    max-width: 100px;
-    height: 50px;
+    margin-top: 50px;
+    color: white;
+    padding: 10px;
+    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 5px solid white;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
-    transition: max-width 1s, height 1s 1s;
+    transition-duration: 1s;
 }
 
-#mus {
-    background-color: var(--cor2);
-    margin-bottom: 50px;
+
+.temasdiv {
+    margin: auto;
+    margin-bottom: 0px;
+    border: 5px solid white;
+    border-radius: 20px 20px;
+    max-width: 80vw;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition-duration: 1s;
+    padding: 0px;
+    cursor: pointer;
 }
 
-#disc {
-    background-color: var(--cor3);
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#bio {
+#bio{
     background-color: var(--cor5);
-    margin-top: 50px;
-    margin-bottom: 50px;
+    line-height: 25px;
+    text-align: justify;
 }
 
-#pais {
-    background-color: var(--cor4);
-    margin-bottom: 50px;
+#titbio {
+    background-color: var(--cor5);
 }
+
+#pais, #titpais {
+    background-color: var(--cor4);
+} 
 
 #imgpais {
     width: 40vw;
@@ -132,22 +135,36 @@ main {
     margin-top: 0px;
 }
 
+#discdiv, #titdiscdiv {
+    max-width: 300px;
+    margin: auto;
+}
 
-#parbio2 {
-    text-align: justify;
+#disc {
+    text-align: left;
     line-height: 25px;
 }
 
-#pardisc {
-    text-align: justify;
+#disc, #titdisc {
+    background-color: var(--cor3);
 }
 
-#parmus, #pardisc, #pardisc1, #parbio, #parbio1, #parbio2, #imgpais, #parpais {
-    padding: 10px 50px;
-    display: none;
+#pardisc {
+    max-width: 67.5vw;
+    text-align: justify;
+    margin: auto;
+}
+
+#mus, #titmus {
+    background-color: var(--cor2);
+}
+
+audio {
+    margin-bottom: 30px;
 }
 
 footer {
+    margin-top: 50px;
     padding: 10px;
     background-color: black;
     padding-top: 40px;
