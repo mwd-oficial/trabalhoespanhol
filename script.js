@@ -1,3 +1,27 @@
+'use strict'
+const switcher = document.querySelector('.btn');
+let botlight = document.getElementById("botlight")
+let botdark = document.getElementById("botdark")
+let botlumdiv2 = document.getElementById("botlumdiv2")
+switcher.addEventListener('click', function() { 
+    document.body.classList.toggle('dark-theme')
+    
+    var className = document.body.className; 
+
+if (className == "light-theme") {  
+    botlumdiv2.style.display = "block"
+    botlight.style.display = "none"
+    botdark.style.display = "block"
+} else {
+    botlumdiv2.style.display = "none"
+    botdark.style.display = "none"
+    botlight.style.display = "block"
+}
+
+console.log('current class name: ' + className)
+});
+
+
 var teste = true
 function bio1() {
     var bio = document.getElementById("bio")
@@ -28,7 +52,7 @@ function bio1() {
         titbio.style.fontSize = "14px"
         titbio.style.width = "150px"
         bio.style.marginBottom = 0
-        titbio.style.borderBottom = "5px solid white"
+        titbio.style.borderBottom = "5px solid var(--fontColor)"
         titbio.style.borderRadius = "20px"
         teste = true
     }
@@ -67,7 +91,7 @@ function pais1() {
         titpais.style.fontSize = "14px"
         titpais.style.width = "150px"
         pais.style.marginBottom = 0
-        titpais.style.borderBottom = "5px solid white"
+        titpais.style.borderBottom = "5px solid var(--fontColor)"
         titpais.style.borderRadius = "20px"
         teste = true
     }
@@ -106,7 +130,7 @@ function disc1() {
         titdisc.style.fontSize = "14px"
         titdisc.style.width = "150px"
         disc.style.marginBottom = 0
-        titdisc.style.borderBottom = "5px solid white"
+        titdisc.style.borderBottom = "5px solid var(--fontColor)"
         titdisc.style.borderRadius = "20px"
         teste = true
     }
@@ -144,7 +168,7 @@ function mus1() {
         titmus.style.fontSize = "14px"
         titmus.style.width = "150px"
         mus.style.marginBottom = 0
-        titmus.style.borderBottom = "5px solid white"
+        titmus.style.borderBottom = "5px solid var(--fontColor)"
         titmus.style.borderRadius = "20px"
         teste = true
     }

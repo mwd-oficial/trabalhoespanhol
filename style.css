@@ -1,16 +1,22 @@
 @charset "UTF-8";
 
 * {
+    color: var(--fontColor);
     margin: 0;
     padding: 0;
 }
 
 :root {
-    --cor1: #800D00;
-    --cor2: #C7AC0A;
-    --cor3: #D17C0A;
-    --cor4: #D10AAE;
-    --cor5: #4100C7;
+    --cor2d: #C7AC0A;
+    --cor3d: #D17C0A;
+    --cor4d: #D10AAE;
+    --cor5d: #3a00ad;
+    --cor2l: #e4c513;
+    --cor3l: #ff9100;
+    --cor4l: #f609cb;
+    --cor5l: rgb(0, 94, 255);
+    --white: #ffffff;
+    --black: #000000;
 }
 
 ::-webkit-scrollbar {
@@ -18,24 +24,94 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: white;
+    background-color: var(--fontColor);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: black;
+    background-color: var(--bg);
+}
+
+.light-theme {
+    --bg: var(--white);
+    --fontColor: var(--black);
+    --btnBg: var(--black);
+    --btnFontColor: var(--white);
+    --biocor: var(--cor5l);
+    --paiscor: var(--cor4l);
+    --disccor: var(--cor3l);
+    --muscor: var(--cor2l);
+}
+
+.dark-theme {
+    --bg: var(--black);
+    --fontColor: var(--white);
+    --btnBg: var(--white);
+    --btnFontColor: var(--black);
+    --biocor: var(--cor5d);
+    --paiscor: var(--cor4d);
+    --disccor: var(--cor3d);
+    --muscor: var(--cor2d);
+}
+
+.botlum {
+    width: 80%;
+    z-index: 102;
+}
+
+
+
+#botlumdiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    z-index: 101;
+}
+#botlumdiv2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    border: 4.5px solid white;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    z-index: 103;
+}
+.btn {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--btnBg);
+    cursor: pointer;
+    z-index: 100;
+    transition-duration: .3s;
 }
 
 body {
     font: normal 14px Arial;
     text-align: center;
-    background-color: black;
+    background: var(--bg);
+    transition-duration: .3s;
 }
 
 
 header {
     background-image: url("martinimg.webp");
-    background-position: center center;
+    background-position: top left;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -43,8 +119,8 @@ header {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    box-shadow: inset 100px -100px 200px 0px black,
-        inset -10px 10px 50px 0px black;
+    box-shadow: inset 100px -100px 200px 0px var(--bg),
+        inset -10px 10px 50px 0px var(--bg);
 }
 
 #sobrepeq {
@@ -56,82 +132,98 @@ header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: black;
-    color: white;
+    background-color: var(--bg);
+    transition-duration: .3s;
     height: 300px;
     width: 300px;
     padding-left: 10px;
     border-radius: 0px 250px 0px 0px;
-    box-shadow: -20px 20px 100px 0px black,
-        10px -10px 100px 0px black,
-        15px -15px 100px 0px black,
-        40px -40px 100px 0px black;
-    overflow: hidden;
+    box-shadow: -20px 20px 100px 0px var(--bg),
+    10px -10px 100px 0px var(--bg),
+    15px -15px 100px 0px var(--bg),
+        40px -40px 100px 0px var(--bg);
+        overflow: hidden;
+    }
+
+h1 {
+    color: var(--fontColor);
+    transition-duration: .3s;
 }
 
 #nomes {
-    background-color: black;
-    color: white;
+    background-color: var(--bg);
+    transition-duration: .3s;
     position: absolute;
     top: 100vh;
     left: 0px;
-    padding: 20px 10px;
+    padding: 0px 10px;
+}
+
+#nomes p {
+    margin: 0px 20px;
 }
 
 p {
-    color: white;
+    color: var(--fontColor);
     margin-bottom: 50px;
+    transition-duration: .3s;
 }
 
 main {
-    color: white;
-    background-color: black;
+    background-color: var(--bg);
+    transition-duration: .3s;
     padding-top: 50px;
-    box-shadow: 0px -20px 20px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: -20px 20px 100px 0px var(--bg),
+    10px -10px 100px 0px var(--bg),
+    15px -15px 100px 0px var(--bg),
+        40px -40px 100px 0px var(--bg);
+    
 }
 
 .tittemas {
     margin: auto;
     margin-top: 50px;
-    color: white;
+    color: var(--fontColor);
+    transition-duration: border color .3s;
+    transition-duration: 1s;
     padding: 10px;
     width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid white;
+    border: 5px solid var(--fontColor);
     border-radius: 20px;
     cursor: pointer;
-    transition-duration: 1s;
 }
 
 
 .temasdiv {
     margin: auto;
     margin-bottom: 0px;
-    border: 5px solid white;
+    border: 5px solid var(--fontColor);
+    transition-duration: border .3s;
+    transition-duration: 1s;
     border-radius: 20px 20px;
     max-width: 80vw;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition-duration: 1s;
     padding: 0px;
     cursor: pointer;
 }
 
 #bio{
-    background-color: var(--cor5);
+    background-color: var(--biocor);
     line-height: 25px;
     text-align: justify;
 }
 
 #titbio {
-    background-color: var(--cor5);
+    background-color: var(--biocor);
 }
 
 #pais, #titpais {
-    background-color: var(--cor4);
+    background-color: var(--paiscor);
 } 
 
 #imgpais {
@@ -151,7 +243,7 @@ main {
 }
 
 #disc, #titdisc {
-    background-color: var(--cor3);
+    background-color: var(--disccor);
 }
 
 #pardisc {
@@ -161,7 +253,7 @@ main {
 }
 
 #mus, #titmus {
-    background-color: var(--cor2);
+    background-color: var(--muscor);
 }
 
 audio {
@@ -171,7 +263,8 @@ audio {
 footer {
     margin-top: 50px;
     padding: 10px;
-    background-color: black;
+    background-color: var(--bg);
+    transition-duration: .3s;
     padding-top: 40px;
 }
 
@@ -195,11 +288,49 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
     header {
-        height: 90vh;
+        background-position: center center;
+        height: 100vh;
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
+    }
+
+    .botlum {
+        width: 50px;
+    }
+
+    #botlumdiv {
+        width: 40px;
+        height: 40px;
+    }
+
+    #botlumdiv2 {
+        width: 35px;
+        height: 35px;
+        border: 4px solid white;
+    }
+
+    .btn {
+    display: inline;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100vw;
+    border-radius: 0px;
+    border: none;
+    background-color: var(--btnBg);
+    cursor: pointer;
+    z-index: 100;
+    transition-duration: .3s;
     }
 
     #sobre {
@@ -216,7 +347,7 @@ footer {
         top: 0;
         left: 0;
         padding: 0px;
-        box-shadow: 0px -20px 20px 20px black;
+        box-shadow: 0px -20px 20px 20px var(--bg);
     }
 
     h1 {
